@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面设计预览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #a6c0fe 0%, #c2a8fd 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 40px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* 设计说明区域 */
+        .design-notes {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .design-notes h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .design-notes h3 {
+            color: #555;
+            margin: 20px 0 10px 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .design-notes p, .design-notes li {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .design-notes ul {
+            margin-left: 20px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #a6c0fe, #c2a8fd);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .feature-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* 注册页面原型 */
+        .register-prototype {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 40px 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            width: 375px;
+            height: 667px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .register-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #a6c0fe, #c2a8fd);
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .welcome-text {
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            border: 2px solid #e1e5e9;
+            border-radius: 15px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .input-wrapper:focus-within {
+            border-color: #a6c0fe;
+            box-shadow: 0 0 0 4px rgba(166, 192, 254, 0.1);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 18px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 18px 20px 18px 50px;
+            border: none;
+            border-radius: 15px;
+            font-size: 16px;
+            background: transparent;
+            color: #333;
+        }
+
+        .form-input:focus {
+            outline: none;
+        }
+
+        .form-options {
+            margin: 20px 0;
+        }
+
+        .agreement {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .agreement-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .terms-link {
+            color: #a6c0fe;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #a6c0fe, #c2a8fd);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(166, 192, 254, 0.3);
+        }
+
+        .register-btn:disabled {
+            opacity: 0.7;
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .login-entry {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .login-desc {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .login-link {
+            color: #a6c0fe;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .design-notes {
+                max-width: 100%;
+                order: 2;
+            }
+            
+            .register-prototype {
+                order: 1;
+                width: 100%;
+                max-width: 375px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 设计说明区域 -->
+        <div class="design-notes">
+            <h2>🎨 注册页面设计说明</h2>
+            
+            <div class="highlight">
+                <strong>设计理念：</strong>与登录页面保持一致的视觉风格，提供流畅的注册体验
+            </div>
+
+            <h3>✨ 页面特色</h3>
+            <div class="feature-list">
+                <ul>
+                    <li><strong>一致的设计语言：</strong>相同的渐变背景、毛玻璃效果、圆角设计</li>
+                    <li><strong>完整的表单验证：</strong>用户名、邮箱、密码、确认密码的实时验证</li>
+                    <li><strong>用户协议集成：</strong>必须同意用户协议和隐私政策才能注册</li>
+                    <li><strong>智能交互反馈：</strong>输入框聚焦效果、错误提示、加载状态</li>
+                </ul>
+            </div>
+
+            <h3>🔐 表单字段</h3>
+            <ul>
+                <li><strong>用户名：</strong>3-20个字符，支持中英文</li>
+                <li><strong>邮箱：</strong>标准邮箱格式验证</li>
+                <li><strong>密码：</strong>6-20个字符，支持特殊字符</li>
+                <li><strong>确认密码：</strong>与密码一致性验证</li>
+            </ul>
+
+            <h3>⚡ 交互流程</h3>
+            <ul>
+                <li><strong>实时验证：</strong>输入时实时检查格式和可用性</li>
+                <li><strong>协议确认：</strong>必须勾选同意协议才能提交</li>
+                <li><strong>成功跳转：</strong>注册成功后自动跳转到登录页面</li>
+                <li><strong>双向导航：</strong>登录和注册页面可以互相跳转</li>
+            </ul>
+
+            <h3>🎯 用户体验</h3>
+            <ul>
+                <li><strong>清晰引导：</strong>每个字段都有明确的标签和提示</li>
+                <li><strong>错误处理：</strong>友好的错误提示和解决建议</li>
+                <li><strong>加载反馈：</strong>注册过程中的状态提示</li>
+                <li><strong>响应式设计：</strong>适配各种移动设备屏幕</li>
+            </ul>
+        </div>
+
+        <!-- 注册页面原型 -->
+        <div class="register-prototype">
+            <div class="register-header">
+                <div class="logo">A</div>
+                <h1 class="welcome-text">创建账户</h1>
+                <p class="subtitle">请填写以下信息完成注册</p>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label class="form-label">用户名</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">👤</span>
+                        <input class="form-input" type="text" placeholder="请输入用户名（至少3个字符）">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">邮箱</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">📧</span>
+                        <input class="form-input" type="text" placeholder="请输入邮箱地址">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">密码</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">🔒</span>
+                        <input class="form-input" type="password" placeholder="请输入密码（至少6个字符）">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">确认密码</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">🔐</span>
+                        <input class="form-input" type="password" placeholder="请再次输入密码">
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <div class="agreement">
+                        <input type="checkbox" id="agree" style="accent-color: #a6c0fe;">
+                        <label for="agree" class="agreement-text">
+                            我已阅读并同意
+                            <span class="terms-link">《用户协议》</span>
+                            和
+                            <span class="terms-link">《隐私政策》</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="register-btn">立即注册</button>
+            </form>
+
+            <div class="login-entry">
+                <span class="login-desc">已有账户？</span>
+                <a href="#" class="login-link">立即登录</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

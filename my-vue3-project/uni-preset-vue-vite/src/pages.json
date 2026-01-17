@@ -1,0 +1,172 @@
+{
+	"pages": [
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/register/register",
+			"style": {
+				"navigationBarTitleText": "注册",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/select/select",
+			"style": {
+				"navigationBarTitleText": "选择",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/create-dormitory/create-dormitory",
+			"style": {
+				"navigationBarTitleText": "创建宿舍",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/manager-home/manager-home",
+			"style": {
+				"navigationBarTitleText": "管理人员首页",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/set-reminder-time/set-reminder-time",
+			"style": {
+				"navigationBarTitleText": "设置提醒时间",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/j-mode-auto-schedule/j-mode-auto-schedule",
+			"style": {
+				"navigationBarTitleText": "J人模式",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/manager-duty-table/manager-duty-table",
+			"style": {
+				"navigationBarTitleText": "管理人员值日表",
+				"navigationStyle": "custom"
+			}
+		},
+		
+		{
+			"path": "pages/p-mode-schedule/p-mode-schedule",
+			"style": {
+				"navigationBarTitleText": "P人模式",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/p-mode-checkin/p-mode-checkin",
+			"style": {
+				"navigationBarTitleText": "P人模式打卡",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/join-method/join-method",
+			"style": {
+				"navigationBarTitleText": "加入宿舍的方式",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/join-dormitory-apply/join-dormitory-apply",
+			"style": {
+				"navigationBarTitleText": "申请加入宿舍",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/manager-member-management/manager-member-management",
+			"style": {
+				"navigationBarTitleText": "成员管理",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/help-feedback/help-feedback",
+			"style": {
+				"navigationBarTitleText": "帮助与反馈",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/manager-invite-member/manager-invite-member",
+			"style": {
+				"navigationBarTitleText": "邀请成员",
+				"navigationStyle": "custom"
+			}
+		},
+		
+		{
+			"path": "pages/manager-mine/manager-mine",
+			"style": {
+				"navigationBarTitleText": "管理人员我的",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/manager-profile/manager-profile",
+			"style": {
+				"navigationBarTitleText": "管理人员资料",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/member-home/member-home",
+			"style": {
+				"navigationBarTitleText": "成员首页",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/member-duty-table/member-duty-table",
+			"style": {
+				"navigationBarTitleText": "成员值日表",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/member-mine/member-mine",
+			"style": {
+				"navigationBarTitleText": "成员我的",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/member-p-mode-checkin/member-p-mode-checkin",
+			"style": {
+				"navigationBarTitleText": "成员P人模式打卡",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationStyle": "custom"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "宿舍值日管理",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

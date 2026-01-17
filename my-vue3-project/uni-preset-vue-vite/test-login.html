@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面设计预览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #a6c0fe 0%, #c2a8fd 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 40px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* 设计说明区域 */
+        .design-notes {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .design-notes h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .design-notes h3 {
+            color: #555;
+            margin: 20px 0 10px 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .design-notes p, .design-notes li {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .design-notes ul {
+            margin-left: 20px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #a6c0fe, #c2a8fd);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .color-swatch {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .color-item {
+            text-align: center;
+        }
+
+        .color-box {
+            width: 60px;
+            height: 30px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+
+        .color-name {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* 登录页面原型 */
+        .login-prototype {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 40px 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            width: 375px;
+            height: 667px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #a6c0fe, #c2a8fd);
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .welcome-text {
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            border: 2px solid #e1e5e9;
+            border-radius: 15px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .input-wrapper:focus-within {
+            border-color: #a6c0fe;
+            box-shadow: 0 0 0 4px rgba(166, 192, 254, 0.1);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 18px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 18px 20px 18px 50px;
+            border: none;
+            border-radius: 15px;
+            font-size: 16px;
+            background: transparent;
+            color: #333;
+        }
+
+        .form-input:focus {
+            outline: none;
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .remember-text {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .forgot-link {
+            color: #a6c0fe;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #a6c0fe, #c2a8fd);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(166, 192, 254, 0.3);
+        }
+
+        .divider {
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e1e5e9;
+        }
+
+        .divider span {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0 15px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .social-login {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #e1e5e9;
+            border-radius: 15px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 20px;
+            color: #666;
+        }
+
+        .social-btn:hover {
+            border-color: #a6c0fe;
+            color: #a6c0fe;
+            transform: translateY(-2px);
+        }
+
+        .footer-text {
+            text-align: center;
+        }
+
+        .footer-desc {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .register-link {
+            color: #a6c0fe;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 5px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .design-notes {
+                max-width: 100%;
+                order: 2;
+            }
+            
+            .login-prototype {
+                order: 1;
+                width: 100%;
+                max-width: 375px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 设计说明区域 -->
+        <div class="design-notes">
+            <h2>🎨 移动端登录页面设计说明</h2>
+            
+            <div class="highlight">
+                <strong>设计理念：</strong>现代简约风格，注重用户体验和视觉美感
+            </div>
+
+            <h3>🎨 色彩方案</h3>
+            <p>采用更浅更高级的渐变色调，从淡蓝色(#a6c0fe)到淡紫色(#c2a8fd)，给人以轻盈、现代的感觉。</p>
+            
+            <div class="color-swatch">
+                <div class="color-item">
+                    <div class="color-box" style="background: linear-gradient(135deg, #a6c0fe, #c2a8fd);"></div>
+                    <div class="color-name">主色调</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-box" style="background: #333;"></div>
+                    <div class="color-name">深色文字</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-box" style="background: #666;"></div>
+                    <div class="color-name">中色文字</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-box" style="background: white;"></div>
+                    <div class="color-name">背景色</div>
+                </div>
+            </div>
+
+            <h3>✨ 视觉元素</h3>
+            <ul>
+                <li><strong>毛玻璃效果：</strong>卡片使用backdrop-filter实现磨砂玻璃效果，增强层次感</li>
+                <li><strong>圆角设计：</strong>所有元素采用圆角处理，提供友好的视觉感受</li>
+                <li><strong>阴影效果：</strong>适当的阴影增强层次感和立体感</li>
+                <li><strong>图标提示：</strong>输入框左侧的图标提供直观的功能提示</li>
+                <li><strong>渐变背景：</strong>更柔和的渐变色调，搭配轻微的图案元素</li>
+            </ul>
+
+            <h3>⚡ 交互设计</h3>
+            <ul>
+                <li><strong>可点击元素：</strong>所有交互元素都可以点击，并有相应的反馈效果</li>
+                <li><strong>浮动标签：</strong>输入框标签位于顶部，清晰指示输入内容</li>
+                <li><strong>按钮反馈：</strong>登录按钮有悬停、点击效果和光效动画</li>
+                <li><strong>选项切换：</strong>记住我选项可以切换选中状态</li>
+                <li><strong>链接提示：</strong>忘记密码和注册链接有悬停效果</li>
+            </ul>
+
+            <h3>📱 用户体验考量</h3>
+            <ul>
+                <li><strong>简洁布局：</strong>只展示必要的登录元素，减少认知负担</li>
+                <li><strong>清晰引导：</strong>从上到下的自然阅读流，引导用户完成登录</li>
+                <li><strong>注册入口：</strong>为新用户提供明确的注册路径</li>
+            </ul>
+        </div>
+
+        <!-- 登录页面原型 -->
+        <div class="login-prototype">
+            <div class="login-header">
+                <div class="logo">A</div>
+                <h1 class="welcome-text">欢迎回来</h1>
+                <p class="subtitle">请登录您的账户</p>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label class="form-label">用户名</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">👤</span>
+                        <input class="form-input" type="text" placeholder="请输入用户名">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">密码</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">🔒</span>
+                        <input class="form-input" type="password" placeholder="请输入密码">
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" style="accent-color: #a6c0fe;">
+                        <label for="remember" class="remember-text">记住我</label>
+                    </div>
+                    <a href="#" class="forgot-link">忘记密码？</a>
+                </div>
+
+                <button type="submit" class="login-btn">登录</button>
+            </form>
+
+            <div class="divider">
+                <span>或者</span>
+            </div>
+
+            <div class="social-login">
+                <div class="social-btn">💬</div>
+                <div class="social-btn">🐧</div>
+                <div class="social-btn">📱</div>
+            </div>
+
+            <div class="footer-text">
+                <span class="footer-desc">还没有账户？</span>
+                <a href="#" class="register-link">立即注册</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
