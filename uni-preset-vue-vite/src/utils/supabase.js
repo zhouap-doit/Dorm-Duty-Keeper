@@ -1,10 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = 'https://kqrdyqebmnypwosivlct.supabase.co'
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 // 请将下面的 key 替换为 Supabase Dashboard 中的 "anon" key
 // Settings -> API -> Project API keys -> anon (public)
 // 格式应该是: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-const supabaseAnonKey = 'sb_publishable_yMlCtGmuPUr8GQPk4wlCfw_sWI6gRDi'
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
